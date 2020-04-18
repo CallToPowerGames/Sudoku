@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="Sudoku" packages="" status="INFO">
+    <Properties>
+        <Property name="log-path">${sys:user.home}/Sudoku/logs</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="RollingFile" fileName="${log-path}/sudoku.log" filePattern="${log-path}/sudoku-%d{yyyy-MM-dd}-%i.log" >
+            <PatternLayout>
+                <pattern>%d{dd.MM.yyyy HH:mm:ss,SSS} (%level{WARN=Warning, DEBUG=Debug, ERROR=Error, TRACE=Trace, INFO=Info}) - %c{1}: %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="5 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="4"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root additivity="false" level="info">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

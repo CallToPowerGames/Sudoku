@@ -1,0 +1,9 @@
+build/
+manifest.mf
+nbproject/
+/dist/
+/build
+/store
+lib/nblibraries.properties
+lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar
+/bin/
