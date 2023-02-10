@@ -1,10 +1,10 @@
 # Sudoku
 
-Soduko and Sudoku solver implementation.
+Soduko and Sudoku solver app.
 
 ## Copyright
 
-(C) 2014-2020 Denis Meyer
+(C) 2014-2023 Denis Meyer
 
 ## Features
 
@@ -15,23 +15,11 @@ Soduko and Sudoku solver implementation.
 * 3 different difficulties
 * Save and load games
 
-## Prerequisites
-
-* Java 8
-* Ant
-
 ## Screenshot
 
 ![Screenshot](img/screenshot.png?raw=true)
 
-## Build
+## Prerequisites for development
 
-There are different ant tasks configured:
-
-* clean
-* init
-* compile
-* copy-dependencies
-* copy-resources
-* jar
-* run-jar
+* Java 17
+* Gradle 7.3.3

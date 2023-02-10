@@ -1,7 +1,7 @@
 /**
  * Sudoku
  * 
- * Copyright (c) 2014-2020 Denis Meyer
+ * Copyright (c) 2014-2023 Denis Meyer
  */
 package de.calltopower.sudoku.solver;
 

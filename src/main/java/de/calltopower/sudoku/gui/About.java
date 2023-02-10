@@ -1,7 +1,7 @@
 /**
  * Sudoku
  * 
- * Copyright (c) 2014-2020 Denis Meyer
+ * Copyright (c) 2014-2023 Denis Meyer
  */
 package de.calltopower.sudoku.gui;
 
@@ -126,7 +126,7 @@ public class About extends JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 5);
         jPanel1.add(label_copyright_str, gridBagConstraints);
 
-        label_copyright.setText("2014-2020 Denis Meyer");
+        label_copyright.setText("2014-2023 Denis Meyer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;

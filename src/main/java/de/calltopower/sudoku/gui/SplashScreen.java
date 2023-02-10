@@ -1,7 +1,7 @@
 /**
  * Sudoku
  * 
- * Copyright (c) 2014-2020 Denis Meyer
+ * Copyright (c) 2014-2023 Denis Meyer
  */
 package de.calltopower.sudoku.gui;
 
@@ -25,70 +25,90 @@ import de.calltopower.sudoku.util.Constants;
 @SuppressWarnings("serial")
 public class SplashScreen extends JWindow {
 
-    private static final Logger LOGGER = LogManager.getLogger(SplashScreen.class);
+	private static final Logger LOGGER = LogManager.getLogger(SplashScreen.class);
 
-    private JLabel imageLabel = null;
-    private JPanel southPanel = null;
-    private JProgressBar progressBar = null;
-    private ImageIcon imageIcon = null;
-    private BorderLayout borderLayout = null;
-    private FlowLayout flowLayout = null;
+	private JLabel imageLabel = null;
+	private JPanel southPanel = null;
+	private JProgressBar progressBar = null;
+	private ImageIcon imageIcon = null;
+	private BorderLayout borderLayout = null;
+	private FlowLayout flowLayout = null;
 
-    public SplashScreen() {
-        LOGGER.debug("Initializing components");
-        URL splashIconURL = getClass().getClassLoader().getResource(Constants.IMAGE_SPLASHSCREEN);
-        if (splashIconURL != null) {
-            this.imageIcon = new ImageIcon(splashIconURL);
+	private int currentProgress = 0;
 
-            borderLayout = new BorderLayout();
-            imageLabel = new JLabel();
-            southPanel = new JPanel();
-            flowLayout = new FlowLayout();
-            progressBar = new JProgressBar();
+	public SplashScreen() {
+		LOGGER.debug("Initializing components");
+		currentProgress = 0;
+		URL splashIconURL = getClass().getClassLoader().getResource(Constants.IMAGE_SPLASHSCREEN);
+		if (splashIconURL != null) {
+			this.imageIcon = new ImageIcon(splashIconURL);
+		} else {
+			LOGGER.error("Could not load image file '" + Constants.IMAGE_SPLASHSCREEN + "'");
+		}
+		borderLayout = new BorderLayout();
+		imageLabel = new JLabel();
+		southPanel = new JPanel();
+		flowLayout = new FlowLayout();
+		progressBar = new JProgressBar();
 
-            initLayout();
-        }
-    }
+		initLayout();
 
-    public void setProgress(int progress) {
-        final int theProgress = progress;
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                progressBar.setValue(theProgress);
-            }
-        });
-    }
+		setProgressAndWait(0);
+	}
 
-    private void initLayout() {
-        // Set the (upper) Image
-        if (imageIcon != null) {
-            imageLabel.setIcon(imageIcon);
-        }
+	public void setProgress(int progress) {
+		final int theProgress = progress;
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				progressBar.setValue(theProgress);
+			}
+		});
+	}
 
-        southPanel.setLayout(flowLayout);
-        southPanel.setBackground(Color.BLACK);
-        southPanel.add(progressBar, null);
+	private void initLayout() {
+		// Set the (upper) Image
+		if (imageIcon != null) {
+			imageLabel.setIcon(imageIcon);
+		} else {
+			imageLabel.setText("Loading Sudoku...");
+		}
 
-        setLayout(borderLayout);
-        add(imageLabel, BorderLayout.CENTER);
-        add(southPanel, BorderLayout.SOUTH);
+		southPanel.setLayout(flowLayout);
+		southPanel.setBackground(Color.BLACK);
+		southPanel.add(progressBar, null);
 
-        pack();
+		setLayout(borderLayout);
+		add(imageLabel, BorderLayout.CENTER);
+		add(southPanel, BorderLayout.SOUTH);
 
-        this.setLocationRelativeTo(null);
-    }
+		pack();
 
-    public void setVisible() {
-        setVisible(true);
-        for (int i = 0; i <= 100; ++i) {
-            setProgress(i);
-            try {
-                Thread.sleep(Constants.MS_SPLASHSCREEN);
-            } catch (InterruptedException ex) {
-            }
-        }
-        dispose();
-    }
+		this.setLocationRelativeTo(null);
+	}
+
+	public void setProgressAndWait(int progress) {
+		int _progress = progress;
+		if (progress < 0) {
+			_progress = 0;
+		} else if (progress > 100) {
+			_progress = 100;
+		}
+
+		int ms_wait = imageIcon != null ? Constants.MS_SPLASHSCREEN : Constants.MS_SPLASHSCREEN_NOIMG;
+
+		if (_progress >= currentProgress) {
+			int progressDiff = _progress - currentProgress;
+			for (int i = 0; i <= progressDiff; ++i) {
+				setProgress(currentProgress + i);
+				try {
+					Thread.sleep(ms_wait);
+				} catch (InterruptedException ex) {
+					LOGGER.error("Thread interrupted");
+				}
+			}
+			currentProgress = _progress;
+		}
+	}
 
 }

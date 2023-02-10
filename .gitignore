@@ -1,9 +1,7 @@
-build/
-manifest.mf
-nbproject/
-/dist/
-/build
-/store
-lib/nblibraries.properties
-lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar
-/bin/
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+bin
