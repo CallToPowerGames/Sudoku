@@ -15,13 +15,17 @@ import org.apache.logging.log4j.Logger;
 import de.calltopower.sudoku.solver.Solver;
 import de.calltopower.sudoku.util.Constants;
 import de.calltopower.sudoku.util.Grid;
+import lombok.Getter;
 
 public class Generator {
 
     private static final Logger LOGGER = LogManager.getLogger(Generator.class);
 
     private final Random random = new Random();
+
+    @Getter
     private final Grid grid;
+
     int maxNrOfTries;
     int currNrOfTries;
     int difficulty;
@@ -34,10 +38,6 @@ public class Generator {
         this.maxNrOfTries = maxNrOfTries;
         this.difficulty = difficulty;
         currNrOfTries = 0;
-    }
-
-    public Grid getGrid() {
-        return grid;
     }
 
     public boolean generate() {

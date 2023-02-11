@@ -69,6 +69,9 @@ public class Grid {
         for (String s : gridSpl) {
             try {
                 int n = Integer.parseInt(s);
+                if (n < 0 || n > 9) {
+                    return false;
+                }
                 newGrid[i][j] = n;
                 ++j;
                 if ((j % Constants.GRID_SIZE) == 0) {

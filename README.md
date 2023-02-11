@@ -12,7 +12,7 @@ Soduko and Sudoku solver app.
 * "Hint" a next possible step
 * Check whether Sudoku is valid and solvable
 * Solve entire Sudoku
-* 3 different difficulties
+* 4 difficulties
 * Save and load games
 
 ## Screenshot

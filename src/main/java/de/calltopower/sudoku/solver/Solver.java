@@ -10,12 +10,15 @@ import org.apache.logging.log4j.Logger;
 
 import de.calltopower.sudoku.util.Constants;
 import de.calltopower.sudoku.util.Grid;
+import lombok.Getter;
 
 public class Solver {
 
     private static final Logger LOGGER = LogManager.getLogger(Solver.class);
 
+    @Getter
     private final Grid grid;
+
     private final int maxNrOfTries;
     private int currNrOfTries;
 
@@ -27,10 +30,6 @@ public class Solver {
         this.grid.copy(grid);
         this.maxNrOfTries = maxNrOfTries;
         currNrOfTries = 0;
-    }
-
-    public Grid getGrid() {
-        return grid;
     }
 
     public boolean checkGrid(Grid grid) {
