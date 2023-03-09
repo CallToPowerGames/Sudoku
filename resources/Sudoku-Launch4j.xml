@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\ctp\Documents\GitHub\Sudoku\dist\Sudoku.jar</jar>
+  <outfile>C:\Users\ctp\Documents\GitHub\Sudoku\dist\Sudoku.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\ctp\Documents\GitHub\Sudoku\resources\icon.ico</icon>
+  <singleInstance>
+    <mutexName>Sudoku</mutexName>
+    <windowTitle>Sudoku</windowTitle>
+  </singleInstance>
+  <jre>
+    <path>jdk-17.0.6</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>1.17.0</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.2.0.0</fileVersion>
+    <txtFileVersion>1.2</txtFileVersion>
+    <fileDescription>Sudoku</fileDescription>
+    <copyright>Denis Meyer</copyright>
+    <productVersion>1.2.0.0</productVersion>
+    <txtProductVersion>1.2</txtProductVersion>
+    <productName>Sudoku</productName>
+    <companyName></companyName>
+    <internalName>Sudoku</internalName>
+    <originalFilename>Sudoku.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+</launch4jConfig>
