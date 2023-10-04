@@ -18,29 +18,3 @@ Soduko and Sudoku solver app.
 ## Screenshot
 
 ![Screenshot](img/screenshot.png?raw=true)
-
-## Development
-
-### Prerequisites
-
-* Java 17
-* Gradle 7.3.3
-
-## Exe + Setup
-
-### Prerequisites
-
-* Launch4j
-* Inno Setup
-
-### Wrappign
-
-* Create folder "dist"
-* Build the jar file via gradle task
-    * Put jar file into "dist"
-* Download JRE/JDK
-    * Put folder into "dist/jre/jdk-name
-* Build exe
-    * Via Launch4j and file "resources/Sudoku-Launch4j.xml"
-* Build Setup exe
-    * Via Inno Setup and file "resources/Sudoku-Setup.iss"

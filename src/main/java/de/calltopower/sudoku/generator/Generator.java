@@ -41,16 +41,18 @@ public class Generator {
     }
 
     public boolean generate() {
-        LOGGER.debug("generate");
+        LOGGER.debug("Generating");
         generate_helper();
         Solver solver = null;
         boolean solved = false;
+        boolean solverLogged = false;
         while ((currNrOfTries <= maxNrOfTries) && !solved) {
             ++currNrOfTries;
             generate_helper();
             Grid g_tmp = new Grid();
             g_tmp.copy(grid);
-            solver = new Solver(g_tmp, maxNrOfTries);
+            solver = new Solver(g_tmp, maxNrOfTries, !solverLogged);
+            solverLogged = true;
             solved = solver.solve(0, 0);
         }
         boolean generated = solved && (solver != null) && (currNrOfTries < maxNrOfTries);

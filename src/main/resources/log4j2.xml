@@ -6,12 +6,12 @@
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout>
-                <pattern>%d{dd.MM.yyyy HH:mm:ss,SSS} (%level{WARN=Warning, DEBUG=Debug, ERROR=Error, TRACE=Trace, INFO=Info}) - %c{1}: %m%n</pattern>
+                <pattern>%d{dd.MM.yyyy HH:mm:ss,SSS} (%level{WARN=Warning, DEBUG=Debug, ERROR=Error, TRACE=Trace, INFO=Info})\t[%c{1}]\t%m%n</pattern>
             </PatternLayout>
         </Console>
         <RollingFile name="RollingFile" fileName="${log-path}/sudoku.log" filePattern="${log-path}/sudoku-%d{yyyy-MM-dd}-%i.log" >
             <PatternLayout>
-                <pattern>%d{dd.MM.yyyy HH:mm:ss,SSS} (%level{WARN=Warning, DEBUG=Debug, ERROR=Error, TRACE=Trace, INFO=Info}) - %c{1}: %m%n</pattern>
+                <pattern>%d{dd.MM.yyyy HH:mm:ss,SSS} (%level{WARN=Warning, DEBUG=Debug, ERROR=Error, TRACE=Trace, INFO=Info})\t[%c{1}]\t%m%n</pattern>
             </PatternLayout>
             <Policies>
                 <SizeBasedTriggeringPolicy size="5 MB" />

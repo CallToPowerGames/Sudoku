@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Sudoku"
-#define MyAppVersion "1.2"
+#define MyAppVersion "1.2.1"
 #define MyAppPublisher "CallToPower Games"
 #define MyAppURL "https://calltopower.itch.io/sudoku"
 #define MyAppExeName "Sudoku.exe"
@@ -42,7 +42,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\Users\ctp\Documents\GitHub\Sudoku\dist\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\ctp\Documents\GitHub\Sudoku\dist\jre\jdk-17.0.6\*"; DestDir: "{app}\jdk-17.0.6"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\ctp\Documents\GitHub\Sudoku\dist\jre\jdk-17.0.8\*"; DestDir: "{app}\jdk-17.0.8"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

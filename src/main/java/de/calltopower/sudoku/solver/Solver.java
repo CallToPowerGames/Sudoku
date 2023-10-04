@@ -23,7 +23,11 @@ public class Solver {
     private int currNrOfTries;
 
     public Solver(Grid grid, int maxNrOfTries) {
-        if (LOGGER.isDebugEnabled()) {
+        this(grid, maxNrOfTries, true);
+    }
+
+    public Solver(Grid grid, int maxNrOfTries, boolean logInitially) {
+        if (LOGGER.isDebugEnabled() && logInitially) {
             LOGGER.debug("Max. no. of tries: " + maxNrOfTries);
         }
         this.grid = new Grid();

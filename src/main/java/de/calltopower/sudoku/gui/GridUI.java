@@ -30,9 +30,9 @@ public class GridUI {
     }
 
     public void init(int i, int j) {
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("Initializing " + i + ", " + j);
-        }
+        // if (LOGGER.isDebugEnabled()) {
+        // LOGGER.debug("Initializing " + i + ", " + j);
+        // }
         if ((i >= 0) && (i < Constants.GRID_SIZE) && (j >= 0) && (j < Constants.GRID_SIZE)) {
             textfields[i][j] = new JTextField("");
             textfields[i][j].setHorizontalAlignment(JTextField.CENTER);

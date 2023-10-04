@@ -9,7 +9,10 @@ import java.awt.Color;
 
 public class Constants {
 
-    public final static String APP_VERSION = "v1.2.0";
+    public final static String APP_NAME = "Sudoku";
+    public final static String VENDOR_NAME = "CallToPower Games";
+    public final static String APP_VERSION = "v1.2.1";
+
     public final static String APP_SAVENAME = "Sudoku_";
     public final static String APP_SAVENAME_SUFFIX = ".sudoku";
 

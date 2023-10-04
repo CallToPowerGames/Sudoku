@@ -36,45 +36,37 @@ public final class Helper {
     }
 
     public static void printSystemInformation() {
-        if (LOGGER.isInfoEnabled()) {
-            LOGGER.debug("");
-            LOGGER.debug("==============================");
-            LOGGER.debug("Sudoku version " + Constants.APP_VERSION);
-            LOGGER.debug("==============================");
-            LOGGER.debug("");
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.info("==============================");
+            LOGGER.info(Constants.APP_NAME);
+            LOGGER.info("==============================");
+            LOGGER.info("(C) " + Constants.VENDOR_NAME);
+            LOGGER.info("Version " + Constants.APP_VERSION);
+            LOGGER.info("");
             LOGGER.debug("------------------------------");
             LOGGER.debug("Java information");
             LOGGER.debug("------------------------------");
-            LOGGER.debug("\t" + "Version " + System.getProperty("java.version"));
-            LOGGER.debug("\t" + "Vendor: " + System.getProperty("java.vendor"));
-            LOGGER.debug("\t" + "Vendor URL: " + System.getProperty("java.vendor.url"));
-            LOGGER.debug("\t" + "Class path: " + System.getProperty("java.class.path"));
-            LOGGER.debug("\t" + "Home: " + System.getProperty("java.home"));
+            LOGGER.debug("Version " + System.getProperty("java.version"));
+            LOGGER.debug("Vendor: " + System.getProperty("java.vendor"));
+            LOGGER.debug("Vendor URL: " + System.getProperty("java.vendor.url"));
+            LOGGER.debug("Class path: " + System.getProperty("java.class.path"));
+            LOGGER.debug("Home: " + System.getProperty("java.home"));
             LOGGER.debug("");
             LOGGER.debug("------------------------------");
             LOGGER.debug("Operating system information");
             LOGGER.debug("------------------------------");
-            LOGGER.debug("\t" + "Name: " + System.getProperty("os.name"));
-            LOGGER.debug("\t" + "Arch: " + System.getProperty("os.arch"));
-            LOGGER.debug("\t" + "Version: " + System.getProperty("os.version"));
-            // LOGGER.debug("\t" + "File separator: " +
-            // System.getProperty("file.separator"));
-            // LOGGER.debug("\t" + "Line separator: " +
-            // System.getProperty("line.separator"));
-            // LOGGER.debug("\t" + "Path separator: " +
-            // System.getProperty("path.separator"));
+            LOGGER.debug("Name: " + System.getProperty("os.name"));
+            LOGGER.debug("Arch: " + System.getProperty("os.arch"));
+            LOGGER.debug("Version: " + System.getProperty("os.version"));
             LOGGER.debug("");
             LOGGER.debug("------------------------------");
             LOGGER.debug("User information");
             LOGGER.debug("------------------------------");
-            LOGGER.debug("\t" + "Name: " + System.getProperty("user.name"));
-            LOGGER.debug("\t" + "Language: " + System.getProperty("user.language") + " (" + Locale.getDefault() + ")");
-            LOGGER.debug("\t" + "Directory: " + System.getProperty("user.dir"));
-            LOGGER.debug("\t" + "Home: " + System.getProperty("user.home"));
+            LOGGER.debug("Name: " + System.getProperty("user.name"));
+            LOGGER.debug("Language: " + System.getProperty("user.language") + " (" + Locale.getDefault() + ")");
+            LOGGER.debug("Directory: " + System.getProperty("user.dir"));
+            LOGGER.debug("Home: " + System.getProperty("user.home"));
             LOGGER.debug("");
-            LOGGER.debug("------------------------------");
-            LOGGER.debug("Application output");
-            LOGGER.debug("------------------------------");
         }
     }
 
